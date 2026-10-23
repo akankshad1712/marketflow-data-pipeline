@@ -1,181 +1,305 @@
-# ◈ MarketFlow
-### Reliable Market Data Infrastructure · Validation · Deterministic Replay
 
-<p align="center">
-  <strong>Engineering trust into every market-data event.</strong>
-</p>
+<div align="center">
 
-<p align="center">
-  A production-inspired Python data engineering platform for validating, ingesting, storing, replaying, and observing market events—with correctness and reproducibility at its core.
-</p>
+# ◈ MARKETFLOW
 
-<p align="center">
-  <a href="https://github.com/akankshad1712/marketflow-data-pipeline">
-    <img src="https://img.shields.io/badge/PROJECT-MARKETFLOW-111827?style=for-the-badge" alt="MarketFlow project"/>
-  </a>
-  <img src="https://img.shields.io/badge/PYTHON-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.11 or newer"/>
-  <img src="https://img.shields.io/badge/API-FASTAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>
-  <img src="https://img.shields.io/badge/DATABASE-POSTGRESQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
-</p>
+### NEXT-GENERATION MARKET DATA INFRASTRUCTURE
 
-<p align="center">
-  <a href="https://github.com/akankshad1712/marketflow-data-pipeline">Repository</a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/akankshad1712/marketflow-data-pipeline/issues">Issues</a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/akankshad1712">GitHub Profile</a>
-  &nbsp;·&nbsp;
-  <a href="https://www.linkedin.com/in/akanksha-deshmukh-26210b244/">LinkedIn</a>
-</p>
+**Reliable Data. Deterministic Replay. Engineering Precision.**
+
+A modern Python-powered data engineering platform designed to validate, ingest, persist, replay, and monitor market events with consistency, integrity, and reproducibility.
+
+<br/>
+
+[![MarketFlow](https://img.shields.io/badge/PROJECT-MARKETFLOW-0F172A?style=for-the-badge&logo=databricks&logoColor=white)](https://github.com/akankshad1712/marketflow-data-pipeline)
+[![Python](https://img.shields.io/badge/PYTHON-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FASTAPI-API-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![PostgreSQL](https://img.shields.io/badge/POSTGRESQL-DATABASE-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Docker](https://img.shields.io/badge/DOCKER-CONTAINERS-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+
+<br/>
+
+[![GitHub](https://img.shields.io/badge/GITHUB-EXPLORE_PROJECT-181717?style=flat-square&logo=github)](https://github.com/akankshad1712/marketflow-data-pipeline)
+[![Issues](https://img.shields.io/badge/ISSUES-CONTRIBUTE-7C3AED?style=flat-square&logo=github)](https://github.com/akankshad1712/marketflow-data-pipeline/issues)
+[![LinkedIn](https://img.shields.io/badge/LINKEDIN-CONNECT-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/akanksha-deshmukh-26210b244/)
+[![License](https://img.shields.io/badge/LICENSE-MIT-16A34A?style=flat-square)](LICENSE)
 
 ---
 
-## 01 / The Vision
+**VALIDATE** &nbsp; ◆ &nbsp; **INGEST** &nbsp; ◆ &nbsp; **PERSIST** &nbsp; ◆ &nbsp; **REPLAY** &nbsp; ◆ &nbsp; **OBSERVE**
 
-MarketFlow explores a fundamental challenge in quantitative research and data engineering:
+</div>
 
-> **How do you make data pipelines reliable enough that the same input produces the same explainable result—and failures can be investigated rather than guessed at?**
+## ◈ 01 — The Vision
 
-In financial data systems, malformed events, duplicate deliveries, inconsistent timestamps, and non-reproducible processing can undermine downstream analysis.
+> **Engineering trust into every market-data event.**
 
-MarketFlow addresses these engineering concerns through explicit data contracts, validated ingestion, duplicate-safe persistence, deterministic event replay, operational metrics, and automated tests.
+Modern data infrastructure requires more than accepting incoming events. It requires explicit contracts, reliable persistence, predictable processing, duplicate protection, and reproducible outcomes.
 
-It is a portfolio project demonstrating production-oriented engineering practices—not a live trading system, broker integration, or investment product.
+**MarketFlow** explores these challenges through a modular data pipeline built around data integrity, deterministic replay, and operational visibility.
 
-## 02 / At a Glance
+<table>
+<tr>
+<td width="50%" valign="top">
 
-| Dimension | Implementation |
+### ◉ Data Integrity
+
+Validate incoming events and enforce clear data contracts before processing.
+
+</td>
+<td width="50%" valign="top">
+
+### ◈ Reliable Persistence
+
+Use stable identifiers and database constraints to protect stored records.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### ⇄ Deterministic Replay
+
+Reconstruct event sequences using consistent filtering and ordering rules.
+
+</td>
+<td width="50%" valign="top">
+
+### ◎ Observability
+
+Expose health information and operational metrics for better diagnostics.
+
+</td>
+</tr>
+</table>
+
+**Project scope:** MarketFlow is a portfolio engineering project using synthetic or manually supplied market events. It is not a live trading engine or an exchange-connected platform.
+
+## ◈ 02 — Project Overview
+
+| Attribute | Details |
 |:--|:--|
-| Project | MarketFlow — Market Data Pipeline & Replay Engine |
-| Category | Backend Engineering · Data Engineering · Quant Infrastructure |
+| Project Name | MarketFlow — Market Data Pipeline & Replay Engine |
+| Category | Backend Engineering · Data Engineering · Quantitative Infrastructure |
 | Language | Python 3.11+ |
-| API framework | FastAPI |
-| Validation | Pydantic |
-| Data access | SQLAlchemy |
-| Database | PostgreSQL with Docker Compose; SQLite for local development |
-| Observability | Prometheus-compatible metrics |
+| API Framework | FastAPI |
+| Data Validation | Pydantic |
+| ORM | SQLAlchemy |
+| Database | PostgreSQL |
+| Local Database | SQLite, where supported by configuration |
+| Monitoring | Prometheus-compatible metrics |
 | Testing | Pytest |
-| Deployment tooling | Docker and Docker Compose |
-| Automation | GitHub Actions CI workflow |
-| Data source | Synthetic and manually supplied market events |
-| Replay strategy | Stable event ordering and SHA-256 digest |
+| Linting | Ruff |
+| Containerization | Docker · Docker Compose |
+| CI Automation | GitHub Actions |
+| Replay Integrity | Canonical serialization · SHA-256 |
 | License | MIT |
 
-## 03 / System Architecture
+## ◈ 03 — Premium System Architecture
 
-MarketFlow separates request validation, application logic, persistence, replay, and monitoring so each responsibility can be inspected and tested.
+MarketFlow separates request handling, data validation, application services, persistence, replay, and monitoring into distinct architectural layers.
 
 ```mermaid
 flowchart TB
-    A["Synthetic Event Generator / API Client"]
-    B["FastAPI Ingestion API"]
-    C["Pydantic Data Contracts"]
-    D{"Validation Passed?"}
-    E["Reject Invalid Payload"]
-    F["Ingestion Service"]
-    G[("Database")]
-    H["Duplicate-Safe Persistence"]
-    I["Deterministic Replay Engine"]
-    J["Canonical Event Serialization"]
-    K["SHA-256 Replay Digest"]
-    L["Prometheus Metrics"]
-    M["Health & Operational Endpoints"]
 
-    A --> B
+    subgraph INPUT["01 · DATA SOURCES"]
+        A["Synthetic Event Generator"]
+        B["API Client"]
+    end
+
+    subgraph API["02 · API & SECURITY"]
+        C["FastAPI Gateway"]
+        D["API-Key Authentication"]
+    end
+
+    subgraph VALIDATION["03 · DATA CONTRACTS"]
+        E["Pydantic Validation"]
+        F{"Schema Valid?"}
+        G["Reject Invalid Event"]
+    end
+
+    subgraph PROCESSING["04 · APPLICATION SERVICES"]
+        H["Ingestion Service"]
+        I["Duplicate Detection"]
+    end
+
+    subgraph STORAGE["05 · PERSISTENCE"]
+        J[("PostgreSQL Database")]
+    end
+
+    subgraph REPLAY["06 · DETERMINISTIC REPLAY"]
+        K["Query & Filters"]
+        L["Stable Event Ordering"]
+        M["Canonical JSON"]
+        N["SHA-256 Digest"]
+    end
+
+    subgraph MONITORING["07 · OBSERVABILITY"]
+        O["Application Metrics"]
+        P["Health Endpoint"]
+        Q["Metrics Endpoint"]
+    end
+
+    A --> C
     B --> C
     C --> D
-    D -- No --> E
-    D -- Yes --> F
-    F --> H
-    H --> G
-    G --> I
+    D --> E
+    E --> F
+
+    F -- Valid --> H
+    F -- Invalid --> G
+
+    H --> I
     I --> J
+
     J --> K
-    F -. instrumentation .-> L
-    I -. instrumentation .-> L
-    B --> M
+    K --> L
     L --> M
+    M --> N
+
+    C -. Instrumentation .-> O
+    H -. Instrumentation .-> O
+    K -. Instrumentation .-> O
+
+    C --> P
+    O --> Q
+
+    classDef input fill:#172554,stroke:#60A5FA,color:#F8FAFC,stroke-width:2px
+    classDef api fill:#0C4A6E,stroke:#38BDF8,color:#F0F9FF,stroke-width:2px
+    classDef validation fill:#312E81,stroke:#A5B4FC,color:#EEF2FF,stroke-width:2px
+    classDef processing fill:#164E63,stroke:#22D3EE,color:#ECFEFF,stroke-width:2px
+    classDef storage fill:#064E3B,stroke:#34D399,color:#ECFDF5,stroke-width:2px
+    classDef replay fill:#4C1D95,stroke:#C4B5FD,color:#F5F3FF,stroke-width:2px
+    classDef monitoring fill:#78350F,stroke:#FBBF24,color:#FFFBEB,stroke-width:2px
+    classDef rejected fill:#7F1D1D,stroke:#F87171,color:#FEF2F2,stroke-width:2px
+
+    class A,B input
+    class C,D api
+    class E,F validation
+    class G rejected
+    class H,I processing
+    class J storage
+    class K,L,M,N replay
+    class O,P,Q monitoring
+
+    linkStyle default stroke:#64748B,stroke-width:1.5px
 ```
 
-### Architectural responsibilities
+### Architectural Responsibility Matrix
 
-| Layer | Responsibility | Engineering benefit |
+| Layer | Component | Responsibility | Benefit |
+|:--|:--|:--|:--|
+| Input | Event generator / API client | Supplies event payloads | Flexible event ingestion |
+| API | FastAPI | Exposes HTTP endpoints | Clear service boundary |
+| Security | API-key dependency | Protects configured endpoints | Controlled access |
+| Validation | Pydantic | Checks event contracts | Early error detection |
+| Application | Ingestion service | Coordinates processing | Separation of concerns |
+| Persistence | SQLAlchemy / database | Stores event records | Durable data management |
+| Replay | Replay engine | Filters and orders events | Reproducible results |
+| Integrity | SHA-256 | Generates replay digests | Output comparison |
+| Monitoring | Metrics and health endpoints | Exposes operational signals | Easier diagnosis |
+| Quality | Pytest | Verifies expected behavior | Regression prevention |
+
+**Design principle:** Validate at the boundary. Persist deliberately. Replay deterministically. Observe continuously.
+
+## ◈ 04 — Event Processing Flow
+
+```mermaid
+flowchart LR
+
+    A["01 · RECEIVE"]
+    B["02 · VALIDATE"]
+    C["03 · PROCESS"]
+    D["04 · PERSIST"]
+    E["05 · REPLAY"]
+    F["06 · VERIFY"]
+
+    A --> B --> C --> D --> E --> F
+
+    B -. Invalid payload .-> X["REJECT"]
+    D -. Duplicate identifier .-> Y["HANDLE DUPLICATE"]
+
+    classDef stage fill:#172554,stroke:#60A5FA,color:#F8FAFC,stroke-width:2px
+    classDef exception fill:#7F1D1D,stroke:#F87171,color:#FEF2F2,stroke-width:2px
+
+    class A,B,C,D,E,F stage
+    class X,Y exception
+
+    linkStyle default stroke:#38BDF8,stroke-width:2px
+```
+
+| Stage | Operation | Expected Result |
 |:--|:--|:--|
-| API boundary | Receives ingestion and replay requests | Clear, documented service interface |
-| Validation layer | Enforces event schema and field constraints | Invalid data is rejected early |
-| Application service | Processes batches and coordinates persistence | Separates business logic from HTTP handlers |
-| Persistence layer | Stores accepted events with uniqueness enforcement | Duplicate deliveries do not create duplicate records |
-| Replay engine | Orders and serializes matching events consistently | Reproducible output for identical stored inputs |
-| Digest generation | Computes a SHA-256 digest of canonicalized replay data | Supports replay comparisons and integrity checks |
-| Metrics layer | Exposes counters and latency measurements | Enables operational visibility |
-| Test layer | Exercises validation and API behavior | Helps detect regressions |
+| 01 | Receive | Accept an incoming request |
+| 02 | Validate | Reject invalid event payloads |
+| 03 | Process | Apply ingestion rules |
+| 04 | Persist | Store events subject to database constraints |
+| 05 | Replay | Retrieve events using stable ordering |
+| 06 | Verify | Compare canonical replay digests |
 
-### Design principle
+## ◈ 05 — Core Capabilities
 
-**Validate at the boundary. Persist deliberately. Replay deterministically. Observe continuously.**
+### 01 / Contract-First Ingestion
 
-## 04 / Core Capabilities
+- Strongly typed event schemas using Pydantic.
+- Explicit handling of unexpected fields.
+- Event identifier and symbol validation.
+- Timezone-aware timestamp processing.
+- UTC normalization where configured.
+- Positive decimal validation for prices and quantities.
+- Configurable batch-size limits.
+- Clear validation errors.
 
-### 01 — Contract-First Data Ingestion
-
-- Strongly typed event models using Pydantic.
-- Explicit rejection of unexpected fields.
-- Normalization of timezone-aware timestamps to UTC.
-- Validation of symbol formats, event identifiers, positive prices, and positive quantities.
-- Configurable maximum batch size.
-- Clear API errors for invalid requests.
-
-### 02 — Duplicate-Safe Persistence
+### 02 / Duplicate-Safe Persistence
 
 - Stable event identifiers.
-- Database uniqueness constraints.
+- Database-level uniqueness constraints.
 - Duplicate-aware ingestion behavior.
-- Transaction-based database operations.
-- Persistence logic separated from request-handling code.
+- Transaction-based persistence.
+- Separation between API handlers and database operations.
 
-Idempotency is enforced at the persistence boundary, rather than relying solely on a client to avoid resending events.
-
-### 03 — Deterministic Event Replay
+### 03 / Deterministic Event Replay
 
 - Optional symbol and time-range filtering.
 - Stable ordering by event timestamp and event identifier.
 - Canonical JSON serialization.
-- SHA-256 digest generation for replay comparisons.
+- SHA-256 digest generation.
 - Configurable replay limits.
 
-The digest helps compare repeated processing of the same stored event sequence. It does not, by itself, prove that an external data source is authentic or that two different datasets are equivalent.
+A digest helps compare serialized replay outputs. It does not independently prove source authenticity or guarantee equivalence between different datasets.
 
-### 04 — Observability by Design
+### 04 / Operational Observability
 
-- Request-level health endpoint.
+- Health endpoint.
 - Accepted-event and duplicate-event counters.
-- Batch-processing metrics.
+- Batch-processing measurements.
 - Ingestion-latency measurements.
 - Replay activity metrics.
-- Prometheus-compatible metrics endpoint.
+- Prometheus-compatible metrics exposure.
 
-### 05 — Security Baseline
+### 05 / Security Baseline
 
-- API-key protection for ingestion and replay endpoints.
-- Constant-time API-key comparison.
+- API-key protection for configured endpoints.
+- Constant-time credential comparison.
 - Environment-based configuration.
-- Example environment file for local setup.
+- Non-sensitive example environment file.
+- Separation between local development and deployment settings.
 
-**Production note:** A shared API key is a baseline, not a complete enterprise security architecture. Production deployments should add managed secrets, key rotation, TLS, access policies, and appropriate authentication and authorization controls.
+> **Production consideration:** A shared API key is only a baseline. Production deployments should implement TLS, managed secrets, credential rotation, least-privilege access, and appropriate network restrictions.
 
-## 05 / API Reference
+## ◈ 06 — API Reference
 
-Base URL for local development: `http://127.0.0.1:8000`
+**Local base URL:** `http://127.0.0.1:8000`
 
 | Method | Endpoint | Authentication | Purpose |
 |:--|:--|:--|:--|
-| `GET` | `/health` | Not required | Check service health |
-| `POST` | `/v1/events` | `X-API-Key` | Validate and ingest a batch of events |
-| `POST` | `/v1/replay` | `X-API-Key` | Retrieve matching events in deterministic order |
-| `GET` | `/metrics` | Not required in the current implementation | Expose service metrics |
-| `GET` | `/docs` | Not required in local development | Explore the interactive OpenAPI documentation |
+| `GET` | `/health` | As configured | Service health |
+| `POST` | `/v1/events` | `X-API-Key` | Ingest event batches |
+| `POST` | `/v1/replay` | `X-API-Key` | Retrieve replay results |
+| `GET` | `/metrics` | As configured | Expose operational metrics |
+| `GET` | `/docs` | As configured | Interactive API documentation |
 
-### Example ingestion request
+### Example / Ingest Market Events
 
 ```bash
 curl -X POST "http://127.0.0.1:8000/v1/events" \
@@ -197,9 +321,7 @@ curl -X POST "http://127.0.0.1:8000/v1/events" \
   }'
 ```
 
-Use the configured local API key. The example key is for development only.
-
-### Example replay request
+### Example / Replay Market Events
 
 ```bash
 curl -X POST "http://127.0.0.1:8000/v1/replay" \
@@ -211,61 +333,59 @@ curl -X POST "http://127.0.0.1:8000/v1/replay" \
   }'
 ```
 
-### Interactive API documentation
+Use the API key configured in your local environment. The sample key is for illustration only.
 
-After starting the service, open:
+### Developer Console
 
-- Swagger UI: `http://127.0.0.1:8000/docs`
-- Health: `http://127.0.0.1:8000/health`
-- Metrics: `http://127.0.0.1:8000/metrics`
-
-## 06 / Data Contract
-
-Every accepted event is expected to satisfy the following rules.
-
-| Field / Rule | Contract |
+| Resource | URL |
 |:--|:--|
-| `event_id` | Required stable identifier |
-| `symbol` | Uppercase alphanumeric symbol; period, underscore, and hyphen are permitted |
-| `event_time` | Required timezone-aware timestamp |
-| `received_time` | Optional timezone-aware timestamp |
-| Timestamp ordering | Event time cannot exceed receive time when both are supplied |
-| `price` | Strictly positive decimal value |
-| `quantity` | Strictly positive decimal value |
-| Additional fields | Rejected to make schema drift explicit |
-| Batch size | Restricted by `MAX_BATCH_SIZE` |
-| Persistence uniqueness | Enforced using the event identifier |
-| Replay ordering | Stable event-time and event-ID ordering |
+| Swagger UI | `http://127.0.0.1:8000/docs` |
+| Health Check | `http://127.0.0.1:8000/health` |
+| Metrics | `http://127.0.0.1:8000/metrics` |
 
-Explicit contracts help downstream consumers distinguish valid market events from malformed or inconsistent input.
+## ◈ 07 — Data Contract
 
-## 07 / Repository Structure
+| Field | Validation Rule | Purpose |
+|:--|:--|:--|
+| `event_id` | Required stable identifier | Event identity |
+| `symbol` | Uppercase alphanumeric; period, underscore, and hyphen permitted | Instrument identification |
+| `event_time` | Required timezone-aware timestamp | Event chronology |
+| `received_time` | Optional timezone-aware timestamp | Arrival-time context |
+| Timestamp ordering | Event time must not exceed receive time when both are supplied | Temporal consistency |
+| `price` | Strictly positive decimal | Price validation |
+| `quantity` | Strictly positive decimal | Quantity validation |
+| Unknown fields | Rejected by the strict schema | Explicit schema control |
+| Batch size | Controlled by `MAX_BATCH_SIZE` | Resource protection |
+| Persistence uniqueness | Database-enforced event identifier | Duplicate protection |
+| Replay ordering | Event timestamp and event identifier | Stable replay |
+
+## ◈ 08 — Repository Structure
 
 ```text
 marketflow-data-pipeline/
 │
 ├── .github/
 │   └── workflows/
-│       └── ci.yml              # Continuous integration workflow
+│       └── ci.yml
 │
 ├── scripts/
-│   └── generate_sample.py      # Synthetic event generator
+│   └── generate_sample.py
 │
 ├── src/
 │   └── marketflow/
 │       ├── __init__.py
-│       ├── api.py              # FastAPI routes and API-key dependency
-│       ├── config.py           # Environment-based settings
-│       ├── db.py               # Database setup and persistence models
-│       ├── metrics.py          # Prometheus-compatible metrics
-│       ├── schemas.py          # Pydantic data contracts
-│       └── service.py          # Ingestion, deduplication, and replay logic
+│       ├── api.py
+│       ├── config.py
+│       ├── db.py
+│       ├── metrics.py
+│       ├── schemas.py
+│       └── service.py
 │
 ├── tests/
-│   ├── test_api.py             # API behavior tests
-│   └── test_schemas.py         # Data-contract tests
+│   ├── test_api.py
+│   └── test_schemas.py
 │
-├── .env.example                # Example environment configuration
+├── .env.example
 ├── .gitignore
 ├── Dockerfile
 ├── docker-compose.yml
@@ -275,212 +395,254 @@ marketflow-data-pipeline/
 └── README.md
 ```
 
-## 08 / Quick Start
+### Module Architecture
+
+| File | Responsibility | Layer |
+|:--|:--|:--|
+| `api.py` | HTTP endpoints and authentication | Interface |
+| `schemas.py` | Event contracts and validation | Validation |
+| `service.py` | Ingestion and replay operations | Application |
+| `db.py` | Database configuration and models | Persistence |
+| `config.py` | Environment-based settings | Configuration |
+| `metrics.py` | Operational instrumentation | Observability |
+| `tests/` | Automated behavior checks | Quality assurance |
+| `.github/workflows/` | CI automation | DevOps |
+
+*Verify filenames against the actual repository before treating the documented tree as the implemented structure.*
+
+## ◈ 09 — Quick Start
 
 ### Prerequisites
 
 | Requirement | Purpose |
 |:--|:--|
-| Python 3.11 or newer | Application runtime |
-| Git | Version control |
-| Docker Desktop | Optional containerized PostgreSQL setup |
-| PowerShell or terminal | Run setup commands |
+| Python 3.11+ | Application runtime |
+| Git | Source control |
+| Docker Desktop | Optional containerized environment |
+| PowerShell | Windows development commands |
 
-### Option A — Local development on Windows
+### Option A / Windows Development
 
-Clone the repository:
+**Step 01 — Clone the repository**
 
 ```powershell
 git clone https://github.com/akankshad1712/marketflow-data-pipeline.git
 cd marketflow-data-pipeline
 ```
 
-Create a virtual environment:
+**Step 02 — Create a virtual environment**
 
 ```powershell
 python -m venv .venv
 ```
 
-Install the project and development dependencies:
+**Step 03 — Install dependencies**
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip install -e ".[dev]"
 ```
 
-Create a local environment file:
+**Step 04 — Configure environment variables**
 
 ```powershell
 Copy-Item .env.example .env
 ```
 
-Review `.env` and configure a local development API key and database settings as needed.
+Review `.env` and configure the database and API key according to the application settings.
 
-Start the API:
+**Step 05 — Start the API**
 
 ```powershell
 .\.venv\Scripts\python.exe -m uvicorn marketflow.api:app --reload
 ```
 
-Open `http://127.0.0.1:8000/docs` to explore the API.
+Open `http://127.0.0.1:8000/docs` in your browser.
 
-### Option B — Docker Compose
+### Option B / Docker Compose
 
-With Docker Desktop running:
+Start the configured services:
 
 ```powershell
 docker compose up --build
 ```
 
-This starts the configured application and PostgreSQL services.
-
-Stop the services with:
+Stop the services:
 
 ```powershell
 docker compose down
 ```
 
-Inspect the Compose configuration and environment settings before exposing the service beyond your local machine.
+Inspect the Compose configuration and environment settings before exposing services outside your local development environment.
 
-## 09 / Testing & Quality
+## ◈ 10 — Testing & Code Quality
 
-Run the automated tests:
+### Run Automated Tests
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest
 ```
 
-Run the linter:
+### Run Ruff
 
 ```powershell
 .\.venv\Scripts\python.exe -m ruff check src tests
 ```
 
-Generate synthetic events:
+### Generate Synthetic Events
 
 ```powershell
 .\.venv\Scripts\python.exe scripts/generate_sample.py --count 100 --out sample_events.json
 ```
 
-### What to verify
+### Quality Verification Matrix
 
-| Test area | Expected behavior |
+| Test Area | Expected Behavior |
 |:--|:--|
-| Schema validation | Invalid symbols, timestamps, prices, or quantities are rejected |
+| Schema validation | Invalid symbols, timestamps, prices, and quantities are rejected |
 | Unknown fields | Unexpected fields fail validation |
-| Authentication | Missing or invalid API keys are rejected for protected routes |
-| Idempotency | Repeated event identifiers do not produce duplicate persisted records |
+| Authentication | Invalid API keys are rejected on protected endpoints |
+| Idempotency | Repeated event IDs do not create duplicate persisted records |
 | Batch limits | Oversized ingestion requests are rejected |
-| Replay | Event ordering is stable and filters are applied |
-| Metrics | Operational metrics are exposed at `/metrics` |
+| Replay | Ordering remains stable and supported filters are applied |
+| Metrics | Configured metrics are exposed |
+| Failure handling | Request and persistence failures produce appropriate outcomes |
 
-Test coverage and test results should be verified in the current environment. No throughput, latency percentile, or availability claim is published here without a measured benchmark.
+Run the checks before publishing test results. Do not claim measured performance, coverage, or reliability without evidence.
 
-## 10 / Reliability & Failure Semantics
+## ◈ 11 — Reliability Engineering
 
-Reliable pipelines need explicit behavior under imperfect conditions.
-
-| Concern | Current approach | Further production work |
+| Concern | Baseline Approach | Future Enhancement |
 |:--|:--|:--|
-| Invalid events | Contract validation and rejection | Optional quarantine store for rejected payloads |
-| Duplicate delivery | Unique event identifier and database constraint | Document retry semantics and conflict handling |
-| Replay reproducibility | Stable ordering and canonical digest | Version replay rules and test cross-version compatibility |
-| Oversized batches | Configurable size limit | Load testing and backpressure policies |
-| Database availability | Database-backed processing | Retry strategy, connection management, and recovery tests |
-| Observability | Counters and latency metrics | Dashboards, alert rules, tracing, and SLOs |
-| Schema evolution | Strict validation | Versioned schemas and database migrations |
+| Invalid events | Schema validation and rejection | Rejected-event quarantine |
+| Duplicate delivery | Stable IDs and database constraints | Explicit retry/conflict policies |
+| Replay reproducibility | Stable ordering and canonical digests | Versioned replay rules |
+| Oversized batches | Configurable limits | Backpressure and load testing |
+| Database availability | Database-backed processing | Recovery and retry policies |
+| Observability | Health and metrics endpoints | Dashboards, tracing, and alerting |
+| Schema evolution | Strict validation | Versioned contracts and migrations |
 | Secrets | Environment-based configuration | Managed secrets and rotation |
 
-These are engineering boundaries, not claims that every production capability is already implemented.
+## ◈ 12 — Engineering Roadmap
 
-## 11 / Engineering Roadmap
+```mermaid
+flowchart LR
 
-The next stages focus on moving from a reliable portfolio service toward a more complete quantitative data platform.
+    A["PHASE 01<br/>Reliability"]
+    B["PHASE 02<br/>Streaming"]
+    C["PHASE 03<br/>Observability"]
+    D["PHASE 04<br/>Scale & Performance"]
 
-| Priority | Planned enhancement | Why it matters |
+    A --> B --> C --> D
+
+    classDef one fill:#172554,stroke:#60A5FA,color:#F8FAFC,stroke-width:2px
+    classDef two fill:#164E63,stroke:#22D3EE,color:#ECFEFF,stroke-width:2px
+    classDef three fill:#312E81,stroke:#A5B4FC,color:#EEF2FF,stroke-width:2px
+    classDef four fill:#064E3B,stroke:#34D399,color:#ECFDF5,stroke-width:2px
+
+    class A one
+    class B two
+    class C three
+    class D four
+
+    linkStyle default stroke:#64748B,stroke-width:2px
+```
+
+| Priority | Enhancement | Expected Benefit |
 |:--|:--|:--|
-| P1 | Load and failure-injection benchmarks | Establish measured throughput and recovery behavior |
-| P1 | Database migrations with Alembic | Manage schema evolution safely |
-| P1 | Structured logging and request correlation IDs | Improve debugging and incident investigation |
-| P2 | Kafka or Redpanda ingestion consumer | Introduce event streaming and consumer recovery |
-| P2 | Bounded retries and dead-letter handling | Handle transient failures and malformed source messages |
-| P2 | OpenTelemetry traces and Prometheus alert rules | Improve end-to-end observability |
-| P2 | Property-based and replay consistency tests | Expand validation of edge cases |
-| P3 | Partitioning and retention policies | Prepare for larger time-series datasets |
-| P3 | Reproducible benchmark reports | Compare throughput and latency under documented conditions |
+| P1 | Load and failure-injection benchmarks | Quantified throughput and recovery |
+| P1 | Alembic migrations | Safer schema evolution |
+| P1 | Structured logging and correlation IDs | Better diagnostics |
+| P2 | Kafka or Redpanda consumers | Event-stream integration |
+| P2 | Bounded retries and dead-letter handling | Improved failure isolation |
+| P2 | OpenTelemetry integration | Distributed tracing |
+| P2 | Property-based replay tests | Broader correctness verification |
+| P3 | Partitioning and retention policies | Larger dataset support |
+| P3 | Reproducible benchmark reports | Evidence-based optimization |
 
-**Scope clarity:** Kafka/Redpanda ingestion, distributed compute, and production-scale benchmarks are roadmap items, not features claimed as implemented in the current repository.
+**Roadmap items are planned enhancements, not implemented features unless verified in the repository.**
 
-## 12 / Performance & Benchmarking Philosophy
+## ◈ 13 — Performance & Benchmarking
 
-Performance numbers are useful only when they can be reproduced.
+Performance claims should be reproducible and backed by documented measurements.
 
-Before publishing benchmark results, record:
+| Metric | Engineering Purpose |
+|:--|:--|
+| Events per second | Throughput |
+| p50 / p95 / p99 latency | Response-time distribution |
+| CPU and memory usage | Resource efficiency |
+| Validation failure rate | Data-quality assessment |
+| Duplicate-event rate | Deduplication workload |
+| Processing error rate | Reliability assessment |
+| Database recovery time | Resilience |
+| Repeated-run variance | Measurement consistency |
 
-- CPU, memory, operating system, and database configuration.
-- Event count, batch size, and event payload size.
-- Test duration and number of repeated runs.
-- Events processed per second.
-- p50, p95, and p99 latency.
-- Validation failures, duplicates, and processing errors.
-- Behavior during database interruption and service recovery.
-- Whether results were measured locally, in Docker, or in a deployed environment.
+Document hardware, software versions, database configuration, batch sizes, payload sizes, test duration, and repeated runs.
 
-A target such as 99.9% successful processing is a goal to test—not a measured result until supported by evidence.
+No unverified throughput, latency, uptime, or availability figures are claimed.
 
-## 13 / Security & Responsible Use
+## ◈ 14 — Security & Responsible Use
 
-- Never commit `.env` files, real credentials, API keys, or private datasets.
-- Use `.env.example` only for non-sensitive configuration templates.
+- Never commit `.env` files, credentials, API keys, or private datasets.
+- Keep `.env.example` free of sensitive information.
 - Replace development credentials before deployment.
-- Use HTTPS and appropriate access controls for remote deployments.
-- Restrict metrics and operational endpoints according to deployment requirements.
-- Validate untrusted input and monitor unexpected request patterns.
+- Use HTTPS and suitable authentication for remote environments.
+- Restrict operational endpoints according to deployment requirements.
+- Validate untrusted input.
+- Review dependencies and container settings before release.
 
-MarketFlow uses synthetic or manually supplied events. It does not connect to a live exchange, execute trades, or provide investment advice.
+MarketFlow uses synthetic or manually supplied events. It does not execute trades or provide investment advice.
 
-## 14 / About the Author
+## ◈ 15 — About the Engineer
 
-<p align="center">
-  <strong>Akanksha Deshmukh</strong><br/>
-  Python · Data Engineering · Backend Systems · AI Engineering
-</p>
+<div align="center">
 
-<p align="center">
-  Interested in building reliable data systems, reproducible workflows, observable APIs, and production-oriented software.
-</p>
+<img src="https://img.shields.io/badge/ENGINEER-AKANKSHA%20DESHMUKH-0F172A?style=for-the-badge" alt="Akanksha Deshmukh"/>
 
-<p align="center">
-  <a href="https://github.com/akankshad1712">
-    <img src="https://img.shields.io/badge/GitHub-akankshad1712-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub profile"/>
-  </a>
-  <a href="https://www.linkedin.com/in/akanksha-deshmukh-26210b244/">
-    <img src="https://img.shields.io/badge/LinkedIn-Akanksha%20Deshmukh-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn profile"/>
-  </a>
-</p>
+### Akanksha Deshmukh
 
-<p align="center">
-  <a href="mailto:akankshadeshmukh308@gmail.com">akankshadeshmukh308@gmail.com</a>
-</p>
+**Python Engineering · Data Engineering · Backend Systems · AI Engineering**
 
-## 15 / Connect & Collaborate
+Building reliable data systems, reproducible workflows, observable APIs, and thoughtfully architected software.
 
-For engineering discussions, project feedback, and relevant opportunities:
+<br/>
 
-- **Email:** [akankshadeshmukh308@gmail.com](mailto:akankshadeshmukh308@gmail.com)
-- **GitHub:** [github.com/akankshad1712](https://github.com/akankshad1712)
-- **LinkedIn:** [Akanksha Deshmukh](https://www.linkedin.com/in/akanksha-deshmukh-26210b244/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/akankshad1712)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/akanksha-deshmukh-26210b244/)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:akankshadeshmukh308@gmail.com)
 
-## License
+</div>
 
-Distributed under the MIT License. See [`LICENSE`](LICENSE) for details.
+### Professional Contact Directory
+
+| Channel | Connect |
+|:--|:--|
+| Email | [akankshadeshmukh308@gmail.com](mailto:akankshadeshmukh308@gmail.com) |
+| GitHub Profile | [github.com/akankshad1712](https://github.com/akankshad1712) |
+| Project Repository | [MarketFlow Data Pipeline](https://github.com/akankshad1712/marketflow-data-pipeline) |
+| LinkedIn | [Akanksha Deshmukh](https://www.linkedin.com/in/akanksha-deshmukh-26210b244/) |
+
+Open to engineering discussions, constructive feedback, collaboration, and relevant professional opportunities.
+
+## ◈ 16 — License
+
+Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for complete terms.
 
 ---
 
-<p align="center">
-  <strong>MarketFlow</strong><br/>
-  <sub>Reliable data in. Reproducible results out.</sub>
-</p>
+<div align="center">
 
-<p align="center">
-  <sub>Built with a focus on correctness, clarity, and engineering discipline.</sub>
-</p>
+### ◈ MARKETFLOW
+
+**RELIABLE DATA IN. REPRODUCIBLE RESULTS OUT.**
+
+<sub>Validate with precision. Persist with confidence. Replay with consistency.</sub>
+
+<br/>
+
+[![Explore Repository](https://img.shields.io/badge/EXPLORE_SOURCE_CODE-2563EB?style=for-the-badge&logo=github&logoColor=white)](https://github.com/akankshad1712/marketflow-data-pipeline)
+
+<br/>
+
+<sub>Crafted by Akanksha Deshmukh · Python · Data Engineering · Quant Infrastructure</sub>
+
+</div>
